@@ -9,31 +9,15 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend("sap.ui.demo.walkthrough", {
-      onInit: function () {
-        //set the data Model on the view
-        var oData = {
-          recipient: {
-            name: "Ui5",
-          },
-        };
-        var oModel = new JSONModel(oData);
-        this.getView().setModel(oModel);
-        // set i18n model on view
-        var i18nModel = new ResourceModel({
-          bundleName: "sap.ui.demo.walkthrough.i18n.i18n",
-          supportedLocales:[""],
-          fallbackLocale: ""
-        });
-        this.getView().setModel(i18nModel, "i18n")
-      },
-
       onShowHello: function () {
         //read message from i18n model
         var oBundle = this.getView().getModel("i18n").getResourceBundle();
-        var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+        var sRecipient = this.getView()
+          .getModel()
+          .getProperty("/recipient/name");
         var sMsg = oBundle.getText("helloMsg", [sRecipient]);
         //Show message
-        MessageToast.show(sMsg)
+        MessageToast.show(sMsg);
         //show a native or vanilla JS alert
         //alert("Hello there!");
         //MessageToast.show("Hello there!");
