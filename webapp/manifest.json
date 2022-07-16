@@ -61,11 +61,6 @@
       "minUI5Version": "1.60",
       "libs": {
         "sap.m": {}
-      },
-      "components": {
-        "<ui5component1>": {
-          "minVersion": "<minComp1Version>"
-        }
       }
     },
     "models": {
