@@ -4,7 +4,7 @@ controllerName="sap.ui.demo/walkthrough.controller.App"
     xmlns:mvc="sap.ui.core.mvc" 
     displayBlock="true">
     <Shell>
-        <App>
+        <App class="myAppDemoWT">
             <pages>
                 <Page title="{i18n>homePageTitle}">
                     <content>
@@ -15,7 +15,7 @@ controllerName="sap.ui.demo/walkthrough.controller.App"
                                 <Button 
                                     text="{i18n>showHelloButtonText}" 
                                     press=".onShowHello"
-                                    class="sapUiSmallMarginEnd">
+                                    class="myCustomButton">
                                 </Button>
 
                                 <Input 
@@ -25,9 +25,10 @@ controllerName="sap.ui.demo/walkthrough.controller.App"
                                     width="60%">
                                 </Input>
 
-                                <Text text="Hello {/recipient/name}"
-                                    class="sapUiSmallMargin">
-                                </Text>
+                                <FormattedText 
+                                    htmlText="Hello {/recipient/name}"
+                                    class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText">
+                                </FormattedText>
                                 
                             </content>
                         </Panel>
